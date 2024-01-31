@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="common_spacing">16dp</dimen>
+    <dimen name="big_spacing">24dp</dimen>
+    <dimen name="small_spacing">8dp</dimen>
+    <dimen name="common_text">16sp</dimen>
+    <dimen name="header_2">18sp</dimen>
+    <dimen name="header_1">24sp</dimen>
+</resources>

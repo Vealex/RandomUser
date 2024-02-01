@@ -1,10 +1,11 @@
-package com.eltex.randomuser
+package com.eltex.randomuser.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.eltex.randomuser.R
 import com.eltex.randomuser.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

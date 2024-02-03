@@ -14,11 +14,6 @@ object RetrofitFactory {
     val INSTANCE: Retrofit by lazy {
         Retrofit.Builder()
             .baseUrl("https://randomuser.me/")
-//            .client(
-//                OkHttpClient.Builder()
-//                    .connectTimeout(30, TimeUnit.SECONDS)
-//                    .build()
-//            )
             .addConverterFactory(
                 json.asConverterFactory(mimeType)
             )

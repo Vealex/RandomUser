@@ -85,14 +85,6 @@ class UserFragment : Fragment() {
                             binding.title.text = user.title
                             binding.firstName.text = user.first
                             binding.lastName.text = user.last
-//                binding.streetNumber.text = "House number: ${user?.streetNumber}"
-//                binding.streetName.text = "Street: ${user?.streetName}"
-//                binding.city.text = "City: ${user?.city}"
-//                binding.state.text = "State: ${user?.state}"
-//                binding.country.text = "Country: ${user?.country}"
-//                binding.postcode.text = "Postcode: ${user?.postcode}"
-//                binding.latitude.text = "Latitude: ${user?.latitude}"
-//                binding.longitude.text = "Longitude: ${user?.longitude}"
                             binding.address.text =
                                 "${user.streetNumber} ${user.streetName}, ${user.city}, ${user.state} ${user.postcode}, ${user.country}"
                             binding.coordinates.text = "${user.latitude}, ${user.longitude}"

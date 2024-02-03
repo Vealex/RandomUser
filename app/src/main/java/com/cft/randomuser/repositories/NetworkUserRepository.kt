@@ -14,31 +14,4 @@ class NetworkUserRepository(private val api: RandomUserGeneratorApi) : UserRepos
 
     override suspend fun getUsersPage(page: Int, count: Int, seed: String) =
         api.getUsersPage(page, count, seed)
-
-    override suspend fun getUserById(id: Int, seed: String) = api.getUserById(id, seed)
-
-    /*{
-        return List(count) {
-            User(
-                name = Name(
-                    first = "Karla",
-                    last = "Christiansen",
-                ),
-                location = Location(
-                    Street(
-                        number = 4647,
-                        name = "Guldagervej",
-                    ),
-                    city = "Kvistgaard",
-                    state = "Danmark",
-                    country = "Denmark",
-                    postcode = 20911,
-                ),
-                cell = "61809747",
-                picture = Picture(
-                    medium = "https://randomuser.me/api/portraits/med/women/0.jpg",
-                ),
-            )
-        }
-    }*/
 }

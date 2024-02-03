@@ -8,6 +8,4 @@ interface UserRepository {
 
     suspend fun getUsersPage(page: Int, count: Int, seed: String): ApiResponse
 
-    suspend fun getUserById(id: Int, seed: String): ApiResponse
-
 }

@@ -109,51 +109,6 @@
                 android:textSize="@dimen/common_text"
                 tools:text="9276 rua três, são josé, amapá 48849, Denmark" />
 
-            <!--<TextView
-                android:id="@+id/street_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textSize="@dimen/common_text"
-                tools:text="Street name: rua três" />
-
-            <TextView
-                android:id="@+id/city"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textSize="@dimen/common_text"
-                tools:text="City: são josé" />
-
-            <TextView
-                android:id="@+id/state"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textSize="@dimen/common_text"
-                tools:text="State: amapá" />
-
-            <TextView
-                android:id="@+id/country"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textSize="@dimen/common_text"
-                tools:text="Country: Denmark" />
-
-            <TextView
-                android:id="@+id/postcode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textSize="@dimen/common_text"
-                tools:text="Postcode: 48849" />-->
-
             <TextView
                 android:id="@+id/coordinates"
                 android:layout_width="match_parent"
@@ -163,15 +118,6 @@
                 android:maxLines="1"
                 android:textSize="@dimen/common_text"
                 tools:text="-43.2439, 54.5285" />
-
-            <!--<TextView
-                android:id="@+id/longitude"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:textSize="@dimen/common_text"
-                tools:text="Longitude: 54.5285" />-->
 
             <TextView
                 android:id="@+id/timezone_offset"

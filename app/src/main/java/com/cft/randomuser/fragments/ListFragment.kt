@@ -4,7 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
@@ -17,6 +19,7 @@ import com.cft.randomuser.R
 import com.cft.randomuser.adapter.UserAdapter
 import com.cft.randomuser.api.RandomUserGeneratorApi
 import com.cft.randomuser.databinding.FragmentListBinding
+import com.cft.randomuser.errors.UserListStatement
 import com.cft.randomuser.mapper.UserUiModelMapper
 import com.cft.randomuser.repositories.NetworkUserRepository
 import com.cft.randomuser.repositories.PreferencesRepositoryImpl
@@ -72,10 +75,38 @@ class ListFragment : Fragment() {
 
         })
 
+        binding.swipeRefresh.setOnRefreshListener {
+            viewModel.clearSeed()
+            viewModel.getUsers(UserListViewModel.INIT_LOAD)
+        }
+
         viewModel.uiState
             .flowWithLifecycle(viewLifecycleOwner.lifecycle)
             .onEach { state ->
-                adapter.submitList(state.users)
+                binding.progressBar.isVisible = false
+                binding.swipeRefresh.isRefreshing = false
+                when (state.statement) {
+                    UserListStatement.LOADING -> {
+                        binding.progressBar.isVisible = true
+                    }
+
+                    UserListStatement.LIST_ERROR -> {
+                        Toast.makeText(requireContext(), R.string.list_error, Toast.LENGTH_SHORT)
+                            .show()
+                    }
+
+                    UserListStatement.PAGE_ERROR -> {
+                        Toast.makeText(requireContext(), R.string.page_error, Toast.LENGTH_SHORT)
+                            .show()
+                    }
+
+                    null -> {
+                        state.seed?.let {
+                            adapter.submitList(state.users)
+                        }
+                    }
+                }
+                viewModel.errorHandled()
             }
             .launchIn(viewLifecycleOwner.lifecycleScope)
 

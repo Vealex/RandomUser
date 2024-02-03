@@ -14,4 +14,7 @@
     <string name="login">Login</string>
     <string name="id">Id</string>
     <string name="nat">Nationality</string>
+    <string name="list_error">User list loading error</string>
+    <string name="page_error">Page loading error</string>
+    <string name="user_load_error">User information loading error</string>
 </resources>

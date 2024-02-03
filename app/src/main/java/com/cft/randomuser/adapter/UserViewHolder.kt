@@ -20,6 +20,7 @@ class UserViewHolder(private val binding: UserElementBinding) :
 
         Glide.with(binding.avatar)
             .load(user.medium)
+            .placeholder(R.drawable.baseline_portrait_24)
             .error(R.drawable.baseline_portrait_24)
             .into(binding.avatar)
     }

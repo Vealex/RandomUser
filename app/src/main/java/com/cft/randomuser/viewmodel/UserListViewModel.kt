@@ -1,8 +1,8 @@
 package com.cft.randomuser.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.cft.randomuser.errors.UserListStatement
 import com.cft.randomuser.mapper.UserUiModelMapper
 import com.cft.randomuser.repositories.PreferencesRepository
 import com.cft.randomuser.repositories.UserRepository
@@ -37,6 +37,12 @@ class UserListViewModel(
     fun getUsers(count: Int) {
         viewModelScope.launch {
             try {
+                _uiState.update {
+                    it.copy(
+                        statement = UserListStatement.LOADING
+                    )
+                }
+
                 val response = repository.getUsers(count, _uiState.value.seed)
 
                 _uiState.value.seed
@@ -51,10 +57,15 @@ class UserListViewModel(
                             .map { user -> mapper.map(user) },
                         seed = response.info?.seed,
                         page = response.info?.page ?: (it.page + 1),
+                        statement = null,
                     )
                 }
             } catch (e: Exception) {
-                Log.e(null, e.message ?: "Все хуёво")
+                _uiState.update {
+                    it.copy(
+                        statement = UserListStatement.LIST_ERROR
+                    )
+                }
             }
         }
 
@@ -74,8 +85,20 @@ class UserListViewModel(
                     )
                 }
             } catch (e: Exception) {
-                Log.e(null, e.message ?: "Все уже хуёво")
+                _uiState.update {
+                    it.copy(
+                        statement = UserListStatement.PAGE_ERROR
+                    )
+                }
             }
+        }
+    }
+
+    fun errorHandled() {
+        _uiState.update {
+            it.copy(
+                statement = null
+            )
         }
     }
 

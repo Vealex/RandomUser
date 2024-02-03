@@ -104,7 +104,7 @@ data class Login(
 @Serializable
 data class UserDate(
     @SerialName("date")
-    val date: String? = null,
+    val date: String = "",
     @SerialName("age")
     val age: Int? = null,
 )

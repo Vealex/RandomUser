@@ -22,7 +22,7 @@ interface RandomUserGeneratorApi {
         @Query("seed") seed: String
     ): ApiResponse
 
-    @GET("api/1.4/")
+    @GET("api/1.4/?results=1")
     suspend fun getUserById(@Query("page") id: Int, @Query("seed") seed: String): ApiResponse
 
     companion object {

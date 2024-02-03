@@ -89,15 +89,17 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/street_number"
+                android:id="@+id/address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autoLink="map"
+                android:maxLines="2"
                 android:ellipsize="end"
-                android:maxLines="1"
+                android:textColorLink="?colorPrimary"
                 android:textSize="@dimen/common_text"
-                tools:text="House nubmer: 9276" />
+                tools:text="9276 rua três, são josé, amapá 48849, Denmark" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/street_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -140,25 +142,26 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:textSize="@dimen/common_text"
-                tools:text="Postcode: 48849" />
+                tools:text="Postcode: 48849" />-->
 
             <TextView
-                android:id="@+id/latitude"
+                android:id="@+id/coordinates"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autoLink="map"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:textSize="@dimen/common_text"
-                tools:text="Latitude: -43.2439" />
+                tools:text="-43.2439, 54.5285" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/longitude"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:textSize="@dimen/common_text"
-                tools:text="Longitude: 54.5285" />
+                tools:text="Longitude: 54.5285" />-->
 
             <TextView
                 android:id="@+id/timezone_offset"

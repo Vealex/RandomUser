@@ -17,6 +17,7 @@ import com.cft.randomuser.R
 import com.cft.randomuser.adapter.UserAdapter
 import com.cft.randomuser.api.RandomUserGeneratorApi
 import com.cft.randomuser.databinding.FragmentListBinding
+import com.cft.randomuser.mapper.UserUiModelMapper
 import com.cft.randomuser.repositories.NetworkUserRepository
 import com.cft.randomuser.repositories.PreferencesRepositoryImpl
 import com.cft.randomuser.viewmodel.UserListViewModel
@@ -39,17 +40,19 @@ class ListFragment : Fragment() {
                             RandomUserGeneratorApi.INSTANCE
                         ),
                         PreferencesRepositoryImpl(requireContext().applicationContext),
+                        UserUiModelMapper(),
                     )
                 }
             }
         }
 
-        val adapter = UserAdapter {
-//            val id =
+        val adapter = UserAdapter { id, page ->
             activity?.findNavController(R.id.container)?.navigate(
                 R.id.action_listFragment_to_userFragment,
                 bundleOf(
-
+                    UserFragment.ID_KEY to id,
+                    UserFragment.PAGE_KEY to page,
+                    UserFragment.SEED_KEY to viewModel.uiState.value.seed,
                 ),
             )
         }
@@ -61,7 +64,7 @@ class ListFragment : Fragment() {
                 val position = binding.list.getChildAdapterPosition(view)
                 val adapterListCount = adapter.itemCount
                 if (position == adapterListCount - 1) {
-                    viewModel.getNextUsers(10)
+                    viewModel.getNextUsers(UserListViewModel.NEXT_PAGE_LOAD)
                 }
             }
 

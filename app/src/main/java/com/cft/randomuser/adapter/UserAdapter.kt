@@ -1,11 +1,11 @@
-package com.eltex.randomuser.adapter
+package com.cft.randomuser.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.eltex.randomuser.databinding.UserElementBinding
-import com.eltex.randomuser.models.UserUiModel
+import com.cft.randomuser.databinding.UserElementBinding
+import com.cft.randomuser.models.UserUiModel
 
 class UserAdapter(private val onClickListener: (View) -> Unit) :
     ListAdapter<UserUiModel, UserViewHolder>(UserItemCallback()) {

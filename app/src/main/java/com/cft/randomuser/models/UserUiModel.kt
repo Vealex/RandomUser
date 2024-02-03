@@ -1,4 +1,4 @@
-package com.eltex.randomuser.models
+package com.cft.randomuser.models
 
 data class UserUiModel(
     val gender: String? = null,
@@ -10,7 +10,7 @@ data class UserUiModel(
     val city: String? = null,
     val state: String? = null,
     val country: String? = null,
-    val postcode: Int? = null,
+    val postcode: String? = null,
     val latitude: String? = null,
     val longitude: String? = null,
     val timezoneOffset: String? = null,

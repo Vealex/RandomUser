@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.eltex.randomuser.fragments.ListFragment"
+        android:name="com.cft.randomuser.fragments.ListFragment"
         android:label="User list"
         tools:layout="@layout/fragment_list">
         <action
@@ -20,6 +20,6 @@
     </fragment>
     <fragment
         android:id="@+id/userFragment"
-        android:name="com.eltex.randomuser.fragments.UserFragment"
+        android:name="com.cft.randomuser.fragments.UserFragment"
         android:label="User info" />
 </navigation>

@@ -1,14 +1,15 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("plugin.serialization") version "1.8.0"
 }
 
 android {
-    namespace = "com.eltex.randomuser"
+    namespace = "com.cft.randomuser"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.eltex.randomuser"
+        applicationId = "com.cft.randomuser"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
@@ -55,4 +56,9 @@ dependencies {
 
 //    implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("com.github.bumptech.glide:glide:4.16.0")
+
+//    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
 }

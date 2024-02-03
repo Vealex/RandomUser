@@ -1,10 +1,10 @@
-package com.eltex.randomuser.adapter
+package com.cft.randomuser.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.eltex.randomuser.R
-import com.eltex.randomuser.databinding.UserElementBinding
-import com.eltex.randomuser.models.UserUiModel
+import com.cft.randomuser.R
+import com.cft.randomuser.databinding.UserElementBinding
+import com.cft.randomuser.models.UserUiModel
 
 class UserViewHolder(private val binding: UserElementBinding) :
     RecyclerView.ViewHolder(binding.root) {

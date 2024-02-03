@@ -1,7 +1,7 @@
-package com.eltex.randomuser.adapter
+package com.cft.randomuser.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.eltex.randomuser.models.UserUiModel
+import com.cft.randomuser.models.UserUiModel
 
 class UserItemCallback : DiffUtil.ItemCallback<UserUiModel>() {
 
